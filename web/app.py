@@ -7,9 +7,9 @@ from bbox.utils import voc2coco, draw_bboxes, load_image
 import config as config
 
 CKPT_PATH = './best.pt'
-IMG_SIZE  = 2100
-CONF      = 0.2
-IOU       = 0.5
+IMG_SIZE  = 1000
+CONF      = 0.1
+IOU       = 0.2
 AUGMENT   = True
 
 def get_bbox(annots):
@@ -146,6 +146,6 @@ def teams():
 if __name__ == '__main__':
     global model
     model = load_model(CKPT_PATH, conf=CONF, iou=IOU)
-    #port = int(os.environ.get('PORT', 5000)) #Define port so we can map container port to localhost
+    port = int(os.environ.get('PORT', 5000)) #Define port so we can map container port to localhost
     app.run(host='0.0.0.0') 
     
