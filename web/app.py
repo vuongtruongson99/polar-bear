@@ -29,7 +29,7 @@ def predict(model, img, size=768, augment=False):
         return [],[]
 
 def show_img(img, bboxes, bbox_format='yolo'):
-    names  = ['starfish']*len(bboxes)
+    names  = ['bear']*len(bboxes)
     labels = [0]*len(bboxes)
     img    = draw_bboxes(img = img,
                            bboxes = bboxes, 
